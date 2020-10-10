@@ -43,7 +43,7 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
         num = Int.random(in: 0...results.count - 1)
         print("ランダムな数\(num)")
         print(results[num].pictureurl)
-       
+    
         let pictureImageView1:UIImage = UIImage(url: results[num].pictureurl)
         
         print("あああああ")
@@ -164,7 +164,7 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
         num = Int.random(in: 0...(results.count - 1))
         print("ランダムな数\(num)")
         
-        let pictureImageView1:UIImage = UIImage(url: results[num].pictureurl)
+        let pictureImageView1:UIImage = UIImage(results[num].pictureurl)
         
         print("あああああ")
         print("画像\(results[num].pictureurl)")
