@@ -17,6 +17,7 @@ class personArray: Object{
        @objc dynamic var pictureurl: String = ""
    }
 
+
 class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate{
     
     var textFieldString = ""
@@ -38,6 +39,9 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
         hint2TextField.delegate = self
         }
     
+    
+    
+    
     @IBAction func albumButton(_ sender: Any) {
         //imagePickerCountrollerのインスタンスを作る
         let imagePickerCountroller: UIImagePickerController = UIImagePickerController()
@@ -48,21 +52,58 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //フォットライブラリを呼び出す
         self.present(imagePickerCountroller, animated: true, completion: nil)
     }
+
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    
+    
+        //アルバム画面で写真を選択した時
+           func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            
+            //        //string型に変換、保存
+            //        let Imageinfo = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+            //
+            //        //imageに選んだ画像を設定する
+            //        let image = info[.originalImage] as? UIImage
+            //        let imageUrl = info[UIImagePickerController.InfoKey.referenceURL] as? NSURL
+            //        URL = (imageUrl?.absoluteString)!
+            //        //imageをpictureImageViewに設定する
+            //        pictureImageView.image = image
+                    //フォトライブラリを閉じる
+            
+            // defer はブロックを抜ける時に defer 内の処理が実行されます
+               defer {
+                  picker.dismiss(animated: true, completion: nil)
+               }
+               // 選択した画像から PHAsset を取得
+               // 画像ライブラリへのアクセスが許可されていない場合は nil が返ってきます
+               guard let phAsset = info[.phAsset] as? PHAsset else { return }
+
+               let options = PHContentEditingInputRequestOptions()
+               phAsset.requestContentEditingInput(with: options) { (input, info) in
+                   // fullSizeImageURL に選択した画像のURLが入っているのでアンラップします
+                   guard let URL = input?.fullSizeImageURL else { return }
+
+                   // これを Realm に保存するなりしてください
+                   // Realm だと URL は保存できないと思うので、Stringに変換するといいかもしれないです
+                
+                //let imageUrl = /*Realmから読み込んだURLのStringだと思ってください*/
+                let pictureurl = URL(string: urlString) {
+                    do {
+                        let data = try Data(contentsOf: url)
+
+                        guard let pictureImageView = UIImage(data: data) else { return }
+                        pictureImageView.image = image
+                    } catch {
+                        print(error)
+                    }
+                }
+                   print(url.absoluteString)
+               }
         
-        //string型に変換、保存
-        let Imageinfo = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
-        //imageに選んだ画像を設定する
-        let image = info[.originalImage] as? UIImage
-        let imageUrl = info[UIImagePickerController.InfoKey.referenceURL] as? NSURL
-        URL = (imageUrl?.absoluteString)!
-        //imageをpictureImageViewに設定する
-        pictureImageView.image = image
-        //フォトライブラリを閉じる
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
     
     @IBAction func saveButton(_ sender: Any) {
         let person1 = personArray()
@@ -97,4 +138,5 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
              
          }
     }
+
 

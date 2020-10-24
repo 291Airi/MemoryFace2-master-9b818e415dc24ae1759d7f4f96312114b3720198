@@ -41,11 +41,12 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
         // 取得件数の表示
         print("results\(results.count)")
         num = Int.random(in: 0...results.count - 1)
+        
         print("ランダムな数\(num)")
         print(results[num].pictureurl)
+    
+        pictureImageView1.image = UIImage(named: results[num].pictureurl)
        
-        let pictureImageView1:UIImage = UIImage(url: results[num].pictureurl)
-        
         print("あああああ")
         print("画像\(results[num].pictureurl)")
         
@@ -162,9 +163,10 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
         print("results\(results.count)")
         
         num = Int.random(in: 0...(results.count - 1))
+       
         print("ランダムな数\(num)")
         
-        let pictureImageView1:UIImage = UIImage(url: results[num].pictureurl)
+        pictureImageView1.image = UIImage(named: results[num].pictureurl)
         
         print("あああああ")
         print("画像\(results[num].pictureurl)")
