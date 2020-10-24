@@ -55,7 +55,6 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     
     
-    
         //アルバム画面で写真を選択した時
            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
