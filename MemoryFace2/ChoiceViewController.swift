@@ -80,7 +80,7 @@ class ChoiceViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 }
                 tableView.reloadData()
             }
-    }
+            }
     
         }
 

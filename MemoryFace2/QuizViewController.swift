@@ -24,7 +24,6 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
     
     var timer: Timer!
     var textFieldString = ""
-    
     var num: Int!
     
     private var realm: Realm!
