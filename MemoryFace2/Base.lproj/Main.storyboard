@@ -337,14 +337,6 @@
                                 <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUo-F0-kCG">
-                                <rect key="frame" x="50" y="58" width="62" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="アルバム">
-                                    <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="64n-IP-cfh">
                                 <rect key="frame" x="138" y="506" width="200" height="34"/>
                                 <constraints>
@@ -438,7 +430,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="←" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1p-w6-kK2">
-                                <rect key="frame" x="120" y="49" width="39" height="48"/>
+                                <rect key="frame" x="108" y="49" width="39" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="sdK-dp-A1Y"/>
                                     <constraint firstAttribute="width" constant="39" id="w9Q-Je-iS7"/>
@@ -484,6 +476,14 @@
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YUo-F0-kCG">
+                                <rect key="frame" x="38" y="58" width="62" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="アルバム">
+                                    <color key="titleColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -505,10 +505,10 @@
                             <constraint firstItem="pDG-FS-Qgs" firstAttribute="top" secondItem="g7M-ca-Z45" secondAttribute="bottom" constant="17" id="Rgn-u1-enh"/>
                             <constraint firstItem="Bzh-06-Lo0" firstAttribute="top" secondItem="yJB-EZ-Veh" secondAttribute="bottom" constant="8" id="SrU-pT-aj4"/>
                             <constraint firstItem="64n-IP-cfh" firstAttribute="leading" secondItem="pDG-FS-Qgs" secondAttribute="trailing" constant="20" id="UoU-MH-Dcn"/>
+                            <constraint firstItem="YUo-F0-kCG" firstAttribute="leading" secondItem="Ol5-7Z-Peb" secondAttribute="leading" constant="38" id="Wlg-Lv-I92"/>
                             <constraint firstItem="cQu-cg-gDS" firstAttribute="leading" secondItem="nei-Eg-bSP" secondAttribute="trailing" constant="20" id="aFH-ce-9YA"/>
                             <constraint firstItem="yJB-EZ-Veh" firstAttribute="centerX" secondItem="ua4-ac-phV" secondAttribute="centerX" id="b0m-Cv-vDK"/>
                             <constraint firstItem="Ol5-7Z-Peb" firstAttribute="bottom" secondItem="Bzh-06-Lo0" secondAttribute="bottom" constant="30" id="bCx-rT-0Cd"/>
-                            <constraint firstItem="2c4-wx-vkH" firstAttribute="top" secondItem="YUo-F0-kCG" secondAttribute="bottom" constant="15" id="dbF-U7-b9e"/>
                             <constraint firstItem="nei-Eg-bSP" firstAttribute="leading" secondItem="Ol5-7Z-Peb" secondAttribute="leading" constant="20" id="eXq-zr-6Ye"/>
                             <constraint firstItem="2c4-wx-vkH" firstAttribute="top" secondItem="fIQ-Jn-raL" secondAttribute="bottom" constant="15" id="fi6-Lf-vhe"/>
                             <constraint firstItem="cOb-RV-8lm" firstAttribute="top" secondItem="boL-Df-wIW" secondAttribute="bottom" constant="8" id="fqJ-ZV-Rgj"/>
@@ -520,7 +520,6 @@
                             <constraint firstItem="0or-xj-wu8" firstAttribute="leading" secondItem="64n-IP-cfh" secondAttribute="trailing" constant="8" id="rhF-Sv-fBW"/>
                             <constraint firstItem="nrK-Ts-olU" firstAttribute="leading" secondItem="cOb-RV-8lm" secondAttribute="trailing" constant="8" id="t2y-gs-ueA"/>
                             <constraint firstItem="64n-IP-cfh" firstAttribute="top" secondItem="cOb-RV-8lm" secondAttribute="bottom" constant="15" id="t5F-MN-Qyj"/>
-                            <constraint firstItem="YUo-F0-kCG" firstAttribute="leading" secondItem="Ol5-7Z-Peb" secondAttribute="leading" constant="50" id="uCL-eN-Bse"/>
                             <constraint firstItem="pDG-FS-Qgs" firstAttribute="leading" secondItem="Ol5-7Z-Peb" secondAttribute="leading" constant="20" id="wTc-9t-cfo"/>
                             <constraint firstItem="Ol5-7Z-Peb" firstAttribute="trailing" secondItem="rTc-Iu-9pu" secondAttribute="trailing" constant="20" id="yIb-XK-iSw"/>
                         </constraints>
@@ -1396,11 +1395,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rtl-MF-gjc"/>
+        <segue reference="hJc-wV-brm"/>
         <segue reference="eY0-D7-6at"/>
-        <segue reference="WEK-Ew-sNC"/>
+        <segue reference="FOG-7H-nY7"/>
         <segue reference="CA3-SQ-6nm"/>
-        <segue reference="Rnf-Ko-Qad"/>
+        <segue reference="Cmi-mi-Gef"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="icon_74-1 (2).png" width="567" height="567"/>
