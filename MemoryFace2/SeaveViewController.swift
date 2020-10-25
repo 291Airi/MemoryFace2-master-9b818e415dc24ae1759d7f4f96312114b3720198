@@ -55,6 +55,7 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
     
     
+    
         //アルバム画面で写真を選択した時
            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             
@@ -76,7 +77,7 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
                // 選択した画像から PHAsset を取得
                // 画像ライブラリへのアクセスが許可されていない場合は nil が返ってきます
                guard let phAsset = info[.phAsset] as? PHAsset else { return }
-
+            
                let options = PHContentEditingInputRequestOptions()
                phAsset.requestContentEditingInput(with: options) { (input, info) in
                    // fullSizeImageURL に選択した画像のURLが入っているのでアンラップします
