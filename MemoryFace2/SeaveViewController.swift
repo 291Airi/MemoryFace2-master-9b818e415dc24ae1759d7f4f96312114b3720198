@@ -9,6 +9,7 @@
 import UIKit
 import RealmSwift
 import AssetsLibrary
+import Photos
 
 class personArray: Object{
        @objc dynamic var textFieldString: String = ""
@@ -16,6 +17,9 @@ class personArray: Object{
        @objc dynamic var hint2: String = ""
        @objc dynamic var pictureurl: String = ""
    }
+
+
+
 
 
 class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate{
@@ -39,9 +43,6 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
         hint2TextField.delegate = self
         }
     
-    
-    
-    
     @IBAction func albumButton(_ sender: Any) {
         //imagePickerCountrollerのインスタンスを作る
         let imagePickerCountroller: UIImagePickerController = UIImagePickerController()
@@ -52,9 +53,6 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
         //フォットライブラリを呼び出す
         self.present(imagePickerCountroller, animated: true, completion: nil)
     }
-
-    
-    
     
         //アルバム画面で写真を選択した時
            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -85,6 +83,16 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
 
                    // これを Realm に保存するなりしてください
                    // Realm だと URL は保存できないと思うので、Stringに変換するといいかもしれないです
+                
+                let obj = Obj()
+                let url =  try! String()
+                obj.pictureurl = url
+                     
+                let realm = try! Realm()
+                
+                try! realm.writer{
+                    realm.add(obj)
+                }
                 
                 //let imageUrl = /*Realmから読み込んだURLのStringだと思ってください*/
                 let pictureurl = URL(string: urlString) {
@@ -137,6 +145,7 @@ class SeaveViewController: UIViewController, UIImagePickerControllerDelegate, UI
              return true
              
          }
+    
     }
 
 
