@@ -61,6 +61,7 @@
 		41685CD72513886200269B73 /* seikai.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = seikai.mp3; sourceTree = "<group>"; };
 		41685CD82513886200269B73 /* skip_to_do.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = skip_to_do.mp3; sourceTree = "<group>"; };
 		41685CD92513886300269B73 /* hazure.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hazure.mp3; sourceTree = "<group>"; };
+		416D50EA257B2DFB0089A071 /* decision7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = decision7.mp3; sourceTree = "<group>"; };
 		416DF6542514F4D30053AA0B /* nigaoe_tokugawa_ieyasu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nigaoe_tokugawa_ieyasu.png; sourceTree = "<group>"; };
 		41B01F8F23769A4300589178 /* MemoryFace2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryFace2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B01F9223769A4300589178 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +127,7 @@
 				41685CD92513886300269B73 /* hazure.mp3 */,
 				41685CD72513886200269B73 /* seikai.mp3 */,
 				41685CD82513886200269B73 /* skip_to_do.mp3 */,
+				416D50EA257B2DFB0089A071 /* decision7.mp3 */,
 			);
 			path = sound;
 			sourceTree = "<group>";

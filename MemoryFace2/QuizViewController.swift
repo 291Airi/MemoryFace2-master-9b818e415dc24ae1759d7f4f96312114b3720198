@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
 class QuizViewController: UIViewController,UITextFieldDelegate{
     
@@ -22,6 +23,7 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var ansewrButton: UIButton!
     @IBOutlet weak var mistake: UIButton!
     
+    var audioPlayer: AVAudioPlayer!
     var timer: Timer!
     var textFieldString = ""
     var num: Int!
@@ -29,7 +31,15 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
     private var realm: Realm!
     
     override func viewDidLoad() {
-        
+           super.viewDidLoad()
+
+           // mp3音声(hazure.mp3)の再生
+           playSound(name: "decision7.mp3")
+
+       }
+    
+    
+    override func viewDidLoad() {
         // (1)Realmのインスタンスを生成する
             let realm1 = try! Realm()
         // (2)全データの取得
@@ -59,6 +69,7 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
         
         super.viewDidLoad()
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -181,4 +192,25 @@ class QuizViewController: UIViewController,UITextFieldDelegate{
         hintLabel.isHidden = true
         image.isHidden = true
         }
+}
+
+extension ViewController: AVAudioPlayerDelegate {
+    func playSound(name: String) {
+        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+            print("音源ファイルが見つかりません")
+            return
+        }
+
+        do {
+            // AVAudioPlayerのインスタンス化
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+
+            // AVAudioPlayerのデリゲートをセット
+            audioPlayer.delegate = self
+
+            // 音声の再生
+            audioPlayer.play()
+        } catch {
+        }
+    }
 }
